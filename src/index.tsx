@@ -29,6 +29,8 @@ import { throttle, getMainLayoutClassName, getDisplayTimeBySeconds } from './uti
 type CustomUIModule = RHAP_UI | ReactElement
 type CustomUIModules = Array<CustomUIModule>
 type OnSeek = (audio: HTMLAudioElement, time: number) => Promise<void>
+type CrossOrigin = 'anonymous' | 'use-credentials' | '' | undefined;
+
 
 interface MSEPropsObject {
   onSeek: OnSeek
@@ -735,7 +737,7 @@ class H5AudioPlayer extends Component<PlayerProps> {
           loop={loop}
           autoPlay={autoPlay}
           preload={preload}
-          crossOrigin={crossOrigin}
+          crossOrigin={crossOrigin as CrossOrigin}
           mediaGroup={mediaGroup}
           ref={this.audio}
         >
