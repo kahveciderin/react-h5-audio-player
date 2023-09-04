@@ -7,6 +7,7 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "NODE_OPTIONS=--openssl-legacy-provider run-p build:cjs build:d.ts build:es build:umd build:css build:less",
+    "postinstall": "NODE_OPTIONS=--openssl-legacy-provider run-p build:cjs build:d.ts build:es build:umd build:css build:less",
     "build:cjs": "cross-env NODE_ENV=cjs babel src --out-dir lib --extensions .tsx,.ts",
     "build:es": "cross-env NODE_ENV=es babel src --out-dir es --extensions .tsx,.ts",
     "build:umd": "webpack",
