@@ -125,6 +125,7 @@ The `controls` attribute defaults to `false` and should never be changed to `tru
 | mse.srcDuration          | number           | -        | The complete duration of the MSE audio chunks together (this is a key of the _mse_ prop) |
 | mse.onSeek               | Function (Event) | -        | The callback to be used when seek happens (this is a key of the _mse_ prop) |
 | mse.srcDuration          | number           | -        | The callback to be used when encrypted audio is detected and needs to be decrypted (this is a key of the _mse_ prop) |
+| progressBarChildren       | ReactNode         | null    | A ReactNode to be rendered inside the progress bar |
 
 ### Event Props
 

@@ -10,7 +10,8 @@ interface ProgressBarForwardRefProps {
   srcDuration?: number
   onSeek?: OnSeek
   onChangeCurrentTimeError?: () => void
-  i18nProgressBar: string
+  i18nProgressBar: string,
+  progressBarChildren?: React.ReactNode
 }
 interface ProgressBarProps extends ProgressBarForwardRefProps {
   progressBar: React.RefObject<HTMLDivElement>
@@ -210,7 +211,7 @@ class ProgressBar extends Component<ProgressBarProps, ProgressBarState> {
   }
 
   render(): React.ReactNode {
-    const { showDownloadProgress, showFilledProgress, progressBar, i18nProgressBar } = this.props
+    const { showDownloadProgress, showFilledProgress, progressBar, i18nProgressBar, progressBarChildren } = this.props
     const { currentTimePos, downloadProgressArr, hasDownloadProgressAnimation } = this.state
 
     return (
@@ -228,6 +229,7 @@ class ProgressBar extends Component<ProgressBarProps, ProgressBarState> {
         onContextMenu={this.handleContextMenu}
       >
         <div className={`rhap_progress-bar ${showDownloadProgress ? 'rhap_progress-bar-show-download' : ''}`}>
+          {progressBarChildren}
           <div className="rhap_progress-indicator" style={{ left: currentTimePos }} />
           {showFilledProgress && <div className="rhap_progress-filled" style={{ width: currentTimePos }} />}
           {showDownloadProgress &&
