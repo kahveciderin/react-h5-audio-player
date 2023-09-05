@@ -87,6 +87,10 @@ class ProgressBar extends Component<ProgressBarProps, ProgressBarState> {
 
   /* Handle mouse down or touch start on progress bar event */
   handleMouseDownOrTouchStartProgressBar = (event: React.MouseEvent | React.TouchEvent): void => {
+    const ourClasses = ["rhap_progress-container", "rhap_progress-indicator", "rhap_progress-bar", "rhap_progress-filled", "rhap_download-progress"]
+
+    if(!ourClasses.some(className => (event.target as HTMLElement).classList.contains(className))) return;
+
     event.stopPropagation()
     const { currentTime, currentTimePos } = this.getCurrentProgress(event.nativeEvent)
 

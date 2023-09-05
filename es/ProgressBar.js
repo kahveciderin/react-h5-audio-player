@@ -47,6 +47,8 @@ class ProgressBar extends Component {
       event.preventDefault();
     });
     _defineProperty(this, "handleMouseDownOrTouchStartProgressBar", event => {
+      const ourClasses = ["rhap_progress-container", "rhap_progress-indicator", "rhap_progress-bar", "rhap_progress-filled", "rhap_download-progress"];
+      if (!ourClasses.some(className => event.target.classList.contains(className))) return;
       event.stopPropagation();
       const {
         currentTime,
