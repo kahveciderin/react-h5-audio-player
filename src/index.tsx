@@ -122,6 +122,8 @@ interface PlayerProps {
   i18nAriaLabels?: I18nAriaLabels
   children?: ReactNode
   style?: CSSProperties
+
+  progressBarChildren?: React.ReactNode
 }
 
 interface CustomIcons {
@@ -429,6 +431,7 @@ class H5AudioPlayer extends Component<PlayerProps> {
             onChangeCurrentTimeError={onChangeCurrentTimeError}
             srcDuration={mse && mse.srcDuration}
             i18nProgressBar={i18nAriaLabels.progressControl}
+            progressBarChildren={this.props.progressBarChildren}
           />
         )
       case RHAP_UI.DURATION:

@@ -92,6 +92,7 @@ interface PlayerProps {
     i18nAriaLabels?: I18nAriaLabels;
     children?: ReactNode;
     style?: CSSProperties;
+    progressBarChildren?: React.ReactNode;
 }
 interface CustomIcons {
     play?: ReactNode;

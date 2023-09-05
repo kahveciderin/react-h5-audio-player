@@ -220,7 +220,8 @@ class H5AudioPlayer extends Component {
             onSeek: mse && mse.onSeek,
             onChangeCurrentTimeError: onChangeCurrentTimeError,
             srcDuration: mse && mse.srcDuration,
-            i18nProgressBar: i18nAriaLabels.progressControl
+            i18nProgressBar: i18nAriaLabels.progressControl,
+            progressBarChildren: this.props.progressBarChildren
           });
         case RHAP_UI.DURATION:
           return React.createElement("div", {
